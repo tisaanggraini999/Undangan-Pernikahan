@@ -1,1 +1,86 @@
+body {
+  font-family: Arial, sans-serif;
+  background-color: #fff0f6;
+  color: #333;
+  text-align: center;
+}
+
+.page {
+  display: none;
+}
+
+.page.active {
+  display: block;
+}
+
+h1, h2, h3, h4 {
+  margin: 0;
+  padding: 10px 0;
+}
+
+.italic {
+  font-style: italic;
+}
+
+.smaller {
+  font-size: 0.8em;
+}
+
+.larger {
+  font-size: 1.2em;
+}
+
+#guest-name {
+  font-size: 1.5em;
+}
+
+button.button {
+  background-color: #ff80ab;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+button.button img {
+  width: 20px;
+  margin-right: 10px;
+}
+
+.countdown {
+  font-size: 2em;
+  margin-top: 20px;
+}
+
+.photo-container {
+  display: inline-block;
+  margin: 20px;
+}
+
+.round-photo {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+}
+
+.frame {
+  background-color: #f0f0f0;
+  border: 2px solid #ccc;
+  padding: 20px;
+  margin: 20px 0;
+}
+
+textarea {
+  width: 80%;
+  height: 100px;
+  padding: 10px;
+}
+
+.gift-container p {
+  font-size: 1.1em;
+  margin-top: 20px;
+}
 
