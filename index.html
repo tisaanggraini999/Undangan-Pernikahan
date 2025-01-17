@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Undangan Pernikahan Salmi & Aisyah">
+    <title>Wedding Invitation</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: 'Arial', sans-serif;
+            overflow: hidden;
+        }
+        .container {
+            height: 100vh;
+            width: 100vw;
+            scroll-snap-type: y mandatory;
+            overflow-y: hidden;
+        }
+        .page {
+            height: 100vh;
+            width: 100%;
+            scroll-snap-align: start;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+            color: white;
+            text-align: center;
+            position: relative;
+        }
+        .page video {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            z-index: -1;
+        }
+        button {
+            background-color: #2980b9;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+            border-radius: 5px;
+            margin-top: 20px;
+        }
+        button:hover {
+            background-color: #1e6a8e;
+        }
+        textarea {
+            width: 80%;
+            height: 100px;
+            border-radius: 5px;
+            margin: 10px;
+            padding: 10px;
+            font-size: 14px;
+            border: 1px solid #ccc;
+        }
+        footer {
+            position: absolute;
+            bottom: 10px;
+            width: 100%;
+            text-align: center;
+            font-size: 14px;
+            color: white;
+        }
+        footer a {
+            color: #2980b9;
+            text-decoration: none;
+        }
+        footer a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <audio autoplay loop>
+        <source src="lagu.mp3" type="audio/mp3">
+        Your browser does not support the audio element.
+    </audio>
+
+    <div class="container" id="scrollContainer">
+        <!-- Page 1: Menu Awal -->
+        <div class="page" id="page1">
+            <video autoplay loop muted>
+                <source src="video1.mp4" type="video/mp4">
+                Your browser does not support the video element.
+            </video>
+            <p>Kepada Yth. <span id="recipient">Tamu</span></p>
+            <h1>Selamat Datang</h1>
+            <p>Dalam acara pernikahan</p>
+            <h2>Salmi & Aisyah</h2>
+            <button id="openInvitation">Buka Undangan</button>
+        </div>
+
+        <!-- Page 2: Kata Pengantar -->
+        <div class="page" id="page2">
+            <video autoplay loop muted>
+                <source src="video2.mp4" type="video/mp4">
+                Your browser does not support the video element.
+            </video>
+            <h1>Kata Pengantar</h1>
+            <p>Dengan rahmat Allah SWT, kami bermaksud menyelenggarakan pernikahan putra-putri kami. 
+            Kehadiran Bapak/Ibu/Saudara/i akan menjadi kebahagiaan dan doa restu bagi kami.</p>
+        </div>
+
+        <!-- Page 3: Nama Mempelai dan Orang Tua -->
+        <div class="page">
+            <video autoplay loop muted>
+                <source src="video3.mp4" type="video/mp4">
+                Your browser does not support the video element.
+            </video>
+            <h1>Salmi & Aisyah</h1>
+            <div>
+                <p><strong>Salmi</strong></p>
+                <p>Putra dari Bapak Ahmad dan Ibu Siti</p>
+                <img src="your-photo-salmi.jpg" alt="Foto Salmi" style="width: 150px; height: 150px; border-radius: 50%;">
+            </div>
+            <div>
+                <p><strong>Aisyah</strong></p>
+                <p>Putri dari Bapak Budi dan Ibu Rina</p>
+                <img src="your-photo-aisyah.jpg" alt="Foto Aisyah" style="width: 150px; height: 150px; border-radius: 50%;">
+            </div>
+        </div>
+
+        <!-- Page 4: Detail Acara -->
+        <div class="page" id="page4">
+            <video autoplay loop muted>
+                <source src="video4.mp4" type="video/mp4">
+                Your browser does not support the video element.
+            </video>
+            <h1>Detail Acara</h1>
+            <p><strong>Akad Nikah:</strong><br> 03 Januari 2025, 13:00 - Selesai<br> Lawang Mandailing, Salimpaung, Tanah Datar, Sumatra Barat</p>
+            <p><strong>Resepsi:</strong><br> 05 Januari 2025, 09:00 - Selesai<br> Kelok Tempe, Indarung, Lubuk Kilangan, Kota Padang, Sumatra Barat</p>
+
+            <h2>Ucapan & Hadiah</h2>
+            <textarea placeholder="Tulis ucapan untuk mempelai..."></textarea>
+            <p><strong>No. Rekening:</strong> 1234-5678-9012 a.n Salmi</p>
+
+            <footer>
+                <p>Website dibuat oleh: Salmi & Aisyah</p>
+                <p>&copy; 2025 Salmi & Aisyah Wedding | <a href="mailto:contact@example.com">Hubungi Kami</a></p>
+            </footer>
+        </div>
+    </div>
+
+    <script>
+        const recipientElement = document.getElementById('recipient');
+        const urlParams = new URLSearchParams(window.location.search);
+        const recipient = urlParams.get('kpd');
+
+        // Update nama penerima jika ada di URL
+        if (recipient) {
+            recipientElement.textContent = recipient;
+        }
+
+        const openButton = document.getElementById('openInvitation');
+        const container = document.getElementById('scrollContainer');
+
+        let currentPage = 1;
+        const totalPages = 4;
+
+        openButton.addEventListener('click', () => {
+            // Mulai scroll otomatis
+            autoScrollPages();
+        });
+
+        function autoScrollPages() {
+            const interval = setInterval(() => {
+                if (currentPage < totalPages) {
+                    currentPage++;
+                    container.scrollBy({
+                        top: window.innerHeight,
+                        left: 0,
+                        behavior: 'smooth',
+                    });
+                } else {
+                    clearInterval(interval); // Hentikan interval setelah mencapai halaman terakhir
+                }
+            }, 5000); // Interval 5 detik antar scroll
+        }
+    </script>
+</body>
+</html>
