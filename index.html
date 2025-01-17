@@ -9,12 +9,18 @@
 <body>
   <!-- Page 1 -->
   <div class="page" id="page-1">
-    <div class="text-center">
+    <video autoplay loop muted id="video1">
+      <source src="assets/video1.mp4" type="video/mp4">
+    </video>
+    <audio autoplay loop>
+      <source src="assets/lagu.mp3" type="audio/mp3">
+    </audio>
+    <div class="content">
       <h1>We Invite You To</h1>
       <h2 class="italic">Fauzia & Wiga Wedding</h2>
       <p class="smaller">Tanpa mengurangi rasa hormat, kami mengundang Bapak/Ibu/Saudara/i untuk hadir di acara kami.</p>
       <h3 class="larger">Kepada</h3>
-      <h4 id="guest-name" class="guest-name"></h4> <!-- Will be dynamically changed -->
+      <h4 id="guest-name" class="guest-name"></h4> <!-- Guest name from URL -->
       <button id="open-invite" class="button">
         <img src="assets/envelope.png" alt="Envelope Icon"> Buka Undangan
       </button>
@@ -23,7 +29,10 @@
 
   <!-- Page 2 -->
   <div class="page" id="page-2">
-    <div class="text-center">
+    <video autoplay loop muted id="video2">
+      <source src="assets/video2.mp4" type="video/mp4">
+    </video>
+    <div class="content">
       <h1>السلام عليكم ورحمة الله وبركاته</h1>
       <p>Assalamu'alaikum Warahmatullahi Wabarakaatuh</p>
       <p class="centered">Di antara tanda-tanda (kebesaran)-Nya ialah bahwa Dia menciptakan pasangan-pasangan untukmu dari (jenis) dirimu sendiri agar kamu merasa tenteram kepadanya. Dia menjadikan di antaramu rasa cinta dan kasih sayang. Sesungguhnya pada yang demikian itu benar-benar terdapat tanda-tanda (kebesaran Allah) bagi kaum yang berpikir. <br> * Ar-Rum. Ayat 21</p>
@@ -34,7 +43,10 @@
 
   <!-- Page 3 -->
   <div class="page" id="page-3">
-    <div class="text-center">
+    <video autoplay loop muted id="video3">
+      <source src="assets/video3.mp4" type="video/mp4">
+    </video>
+    <div class="content">
       <h3>Atas Berkah dan Rahmat Allah Subhanallahu Wa Ta'ala</h3>
       <p>Tanpa mengurangi rasa hormat, kami mengundang Bapak/Ibu/Saudara/i serta kerabat sekalian untuk menghadiri acara pernikahan kami:</p>
 
@@ -54,28 +66,33 @@
 
   <!-- Page 4 -->
   <div class="page" id="page-4">
-    <div class="frame">
-      <h4>Save The Date</h4>
-      <p>Akad Nikah: <strong>Jumat, 14 Februari 2025, Pukul 09:00 WIB Sampai Selesai</strong></p>
-      <p>Lokasi: Timbulun, Kecamatan Tanjung Gadang, Sijunjung</p>
-    </div>
+    <video autoplay loop muted id="video4">
+      <source src="assets/video4.mp4" type="video/mp4">
+    </video>
+    <div class="content">
+      <div class="frame">
+        <h4>Save The Date</h4>
+        <p>Akad Nikah: <strong>Jumat, 14 Februari 2025, Pukul 09:00 WIB Sampai Selesai</strong></p>
+        <p>Lokasi: Timbulun, Kecamatan Tanjung Gadang, Sijunjung</p>
+      </div>
 
-    <div class="frame">
-      <h4>Resepsi Pernikahan</h4>
-      <p>Jum'at, 14 Februari 2025, Pukul 09:00 WIB Sampai Selesai</p>
-      <p>Lokasi: Balai-Balai Timbulun, Kecamatan Tanjung Gadang</p>
-    </div>
+      <div class="frame">
+        <h4>Resepsi Pernikahan</h4>
+        <p>Jum'at, 14 Februari 2025, Pukul 09:00 WIB Sampai Selesai</p>
+        <p>Lokasi: Balai-Balai Timbulun, Kecamatan Tanjung Gadang</p>
+      </div>
 
-    <p>Merupakan suatu kehormatan dan kebahagiaan bagi kami sekeluarga, apabila Bapak/Ibu/Saudara/i berkenan hadir dan memberikan doa restu. Atas kehadiran dan doa restunya, kami mengucapkan terima kasih.</p>
+      <p>Merupakan suatu kehormatan dan kebahagiaan bagi kami sekeluarga, apabila Bapak/Ibu/Saudara/i berkenan hadir dan memberikan doa restu. Atas kehadiran dan doa restunya, kami mengucapkan terima kasih.</p>
 
-    <div class="message-container">
-      <textarea id="message" placeholder="Tulis pesan untuk pengantin"></textarea>
-      <button id="send-message" class="button">Kirim Pesan</button>
-    </div>
+      <div class="message-container">
+        <textarea id="message" placeholder="Tulis pesan untuk pengantin"></textarea>
+        <button id="send-message" class="button">Kirim Pesan</button>
+      </div>
 
-    <div class="gift-container">
-      <p>Kirimkan Kado</p>
-      <p>Rekening: 123-456-789</p>
+      <div class="gift-container">
+        <p>Kirimkan Kado</p>
+        <p>Rekening: 123-456-789</p>
+      </div>
     </div>
   </div>
 
