@@ -1,4 +1,4 @@
-// Function to update guest name based on URL
+// Fungsi untuk memperbarui nama tamu berdasarkan parameter URL
 function updateGuestName() {
   const urlParams = new URLSearchParams(window.location.search);
   const guestName = urlParams.get('guest');
@@ -25,7 +25,7 @@ function updateCountdown() {
 
 setInterval(updateCountdown, 1000);
 
-// Auto-scrolling functionality for Page 2
+// Auto-scrolling ke halaman selanjutnya
 let currentPage = 1;
 
 function scrollPages() {
@@ -47,7 +47,7 @@ function scrollPages() {
 // Event Listeners
 document.getElementById('open-invite').addEventListener('click', scrollPages);
 
-// Initialize page
+// Menampilkan halaman pertama dan memperbarui nama tamu
 document.addEventListener('DOMContentLoaded', () => {
   updateGuestName();
   document.getElementById('page-1').classList.add('active');
