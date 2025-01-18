@@ -1,54 +1,52 @@
-// Fungsi untuk memperbarui nama tamu berdasarkan parameter URL
-function updateGuestName() {
-  const urlParams = new URLSearchParams(window.location.search);
-  const guestName = urlParams.get('guest');
-  if (guestName) {
-    document.getElementById('guest-name').textContent = guestName;
-  }
-}
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tulisan di Tengah</title>
+  <style>
+    body, html {
+      margin: 0;
+      padding: 0;
+      height: 100%;
+    }
 
-// Countdown Timer
-const countdownDate = new Date("Feb 14, 2025 00:00:00").getTime();
-const countdownElement = document.getElementById('countdown');
+    .background {
+      background-image: url('img3.jpeg'); /* Ganti dengan URL gambar Anda */
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+      height: 100%;
+      position: relative; /* Agar teks di atas background */
+      color: white;
+      font-family: Arial, sans-serif;
+    }
 
-function updateCountdown() {
-  const now = new Date().getTime();
-  const distance = countdownDate - now;
+    .content {
+      position: absolute; /* Posisi absolut untuk teks */
+      top: 50%; /* Posisikan di tengah vertikal */
+      left: 50%; /* Posisikan di tengah horizontal */
+      transform: translate(-50%, -50%); /* Pastikan benar-benar di tengah */
+      text-align: center; /* Teks rata tengah */
+    }
 
-  if (distance < 0) {
-    countdownElement.textContent = "It's time!";
-  } else {
-    const days = Math.floor(distance / (1000 * 60 * 60 * 24));
-    countdownElement.textContent = `${days} days remaining`;
-  }
-}
+    .content h1 {
+      font-size: 3rem; /* Ukuran teks utama */
+      margin: 0;
+    }
 
-setInterval(updateCountdown, 1000);
-
-// Auto-scrolling ke halaman selanjutnya
-let currentPage = 1;
-
-function scrollPages() {
-  if (currentPage === 1) {
-    document.getElementById('page-1').classList.remove('active');
-    document.getElementById('page-2').classList.add('active');
-    currentPage++;
-  } else if (currentPage === 2) {
-    document.getElementById('page-2').classList.remove('active');
-    document.getElementById('page-3').classList.add('active');
-    currentPage++;
-  } else if (currentPage === 3) {
-    document.getElementById('page-3').classList.remove('active');
-    document.getElementById('page-4').classList.add('active');
-    currentPage++;
-  }
-}
-
-// Event Listeners
-document.getElementById('open-invite').addEventListener('click', scrollPages);
-
-// Menampilkan halaman pertama dan memperbarui nama tamu
-document.addEventListener('DOMContentLoaded', () => {
-  updateGuestName();
-  document.getElementById('page-1').classList.add('active');
-});
+    .content p {
+      font-size: 1.5rem; /* Ukuran teks tambahan */
+      margin: 0;
+    }
+  </style>
+</head>
+<body>
+  <div class="background">
+    <div class="content">
+      <h1>Selamat Datang</h1>
+      <p>Ini adalah teks di tengah layar.</p>
+    </div>
+  </div>
+</body>
+</html>
