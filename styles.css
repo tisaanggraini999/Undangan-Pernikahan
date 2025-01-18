@@ -1,12 +1,12 @@
 /* Mengatur jarak vertikal dengan margin */
 .spasi-1 {
-  margin-top: 20px; /* Jarak setara dengan 1 baris */
+  padding-top: 20px; /* Jarak setara dengan 1 baris */
 }
 .spasi-7 {
-  margin-top: 140px; /* Jarak setara dengan 7 baris */
+  padding-top: 140px; /* Jarak setara dengan 7 baris */
 }
 .spasi-20 {
-  margin-top: 500px; /* Jarak setara dengan 20 baris */
+ padding-top: 500px; /* Jarak setara dengan 20 baris */
 }
 
 
