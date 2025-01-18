@@ -1,1 +1,15 @@
+/* Mengatur jarak vertikal dengan margin */
+.spasi-1 {
+  margin-top: 20px; /* Jarak setara dengan 1 baris */
+}
+.spasi-7 {
+  margin-top: 140px; /* Jarak setara dengan 7 baris */
+}
+.spasi-20 {
+  margin-top: 280px; /* Jarak setara dengan 20 baris */
+}
 
+/* Mengatur padding untuk jarak vertikal dalam elemen */
+.padding-7 {
+  padding-top: 140px; /* Padding setara dengan 7 baris */
+}
